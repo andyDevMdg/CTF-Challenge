@@ -6,11 +6,11 @@ Un échange authentifié de fichier réalisé grâce au protocole FTP. Retrouvez
 
 - "Démarrer le challenge": un fichier nommée **_ch1.pcap_** sera téléchargé automatiquement
 - ouvrir **_ch1.pcap_** aver Wireshark
-(screenshot)
+- **(screenshot)**
 - rechercher **_ftp_** car il s'agit d'un **_protocole FTP_**
-(screenshot)
+- **(screenshot)**
 - dans la colonne **"info"**, une ligne contient **"Request: PASS"** et le mot de passe s'y trouve
-(screenshot)
+- **(screenshot)**
 - voilà pour ce challenge
 
 
@@ -19,22 +19,43 @@ Retrouvez le mot de passe de l’utilisateur dans cette capture réseau de sessi
 
 - "Démarrer le challenge": un fichier nommée **_ch2.pcap_** sera téléchargé automatiquement
 - ouvrir **_ch2.pcap_** aver Wireshark
-(screenshot)
+- **(screenshot)**
 - faire un clic-droit sur un des paquets > follow > tcp stream
-(screenshot)
+- **(screenshot)**
 - le mot de passe devrait s'afficher dans boîte de dialogue qui s'affiche
-(screenshot)
+- **(screenshot)**
 
 ## Authentification twitter
 Une session d’authentification twitter a été capturée. Retrouvez le mot de passe de l’utilisateur dans cette capture réseau.
 
 - "Démarrer le challenge": un fichier nommée **_ch3.pcap_** sera téléchargé automatiquement
 - ouvrir **_ch3.pcap_** aver Wireshark
-(screenshot)
+- **(screenshot)**
 - On peut voir qu'il s'agit d'un protocole HTTP
 - Faire un clic-droit sur le paquet > follow > HTTP stream
-(screenshot)
-- Puisqu'il s'agit d'une Authentification HTTP, les identifiants devrait se trouver sur la ligne **"Authorization"**
+- **(screenshot)**
+- Puisqu'il s'agit d'une Authentification HTTP, _les identifiants_ devrait se trouver sur la ligne **"Authorization"**
 - On peut voir **_"Basic"_** suivi d'une chaîne de caractère en **base64** qu'il faudra decoder pour avoir le mot de passe
 
 ## ETHERNET - trame
+Retrouvez les données normalement confidentielles contenues dans cette trame.
+
+-"Démarrer le challenge": vous obtiendrez un fichier **_ch12.txt_**
+- Ce fichier contient une trame ethernet qu'il faudra décodé
+- **(screenshot)**
+- Utiliser n'importe quel **"packet decoder"** que vous trouverez en ligne
+- Vous devrer avoir le resultat suivant
+- **(screenshot)**
+- On pourra constater qu'il s'agit d'un protocole HTTP donc _les identifiants_ se trouvent dans **"Authorization"**
+- **(screenshot)**
+- Pas la peine de decoder la chaîne de caracère en **base64**, le mot de passe est visible
+
+## Bluetooth - Fichier inconnu
+Votre ami travaillant à l’ANSSI a récupéré un fichier illisible dans l’ordi d’un hacker. Tout ce qu’il sait est que cela provient d’un échange entre un ordinateur et un téléphone. A vous d’en apprendre le plus possible sur ce téléphone.
+
+La réponse est le hash SHA1 de la concaténation de l’adresse MAC (en majuscules) et du nom du téléphone.
+
+Exemple :
+AB:CD:EF:12:34:56monTelephone -> 836eca0d42f34291c5fefe91010873008b53c129
+
+# CHALLENGE POINT SY TYPE SISA DIA SCREENSHOT
