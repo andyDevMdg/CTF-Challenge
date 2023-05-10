@@ -1,4 +1,4 @@
-# root-me :skull:
+# root-me :skull: (work-in-progress)
 Vous trouverez ici comment résoudre certains challenges du site.
 
 ## FTP - Authentification
@@ -7,7 +7,7 @@ Un échange authentifié de fichier réalisé grâce au protocole FTP. Retrouvez
 - "Démarrer le challenge": un fichier nommée **_ch1.pcap_** sera téléchargé automatiquement
 - ouvrir **_ch1.pcap_** aver Wireshark
 - **(screenshot)**
-- rechercher **_ftp_** car il s'agit d'un **_protocole FTP_**
+- rechercher **_ftp_** car il s'agit d'un **protocole FTP**
 - **(screenshot)**
 - dans la colonne **"info"**, une ligne contient **"Request: PASS"** et le mot de passe s'y trouve
 - **(screenshot)**
@@ -35,7 +35,7 @@ Une session d’authentification twitter a été capturée. Retrouvez le mot de 
 - Faire un clic-droit sur le paquet > follow > HTTP stream
 - **(screenshot)**
 - Puisqu'il s'agit d'une Authentification HTTP, _les identifiants_ devrait se trouver sur la ligne **"Authorization"**
-- On peut voir **_"Basic"_** suivi d'une chaîne de caractère en **base64** qu'il faudra decoder pour avoir le mot de passe
+- On peut voir **"Basic"_* suivi d'une chaîne de caractère en **base64** qu'il faudra decoder pour avoir le mot de passe
 
 ## ETHERNET - trame
 Retrouvez les données normalement confidentielles contenues dans cette trame.
@@ -58,4 +58,13 @@ La réponse est le hash SHA1 de la concaténation de l’adresse MAC (en majuscu
 Exemple :
 AB:CD:EF:12:34:56monTelephone -> 836eca0d42f34291c5fefe91010873008b53c129
 
-# CHALLENGE POINT SY TYPE SISA DIA SCREENSHOT
+-"Démarrer le challenge": vous obtiendrez un fichier **_ch18.bin_**
+- Ouvrir le fichier .bin sur Wireshark, on y trouvera plusieurs paquets
+- **(screenshot)**
+- Dans la liste des paquets, trouver celui contenant **"Remote name"** dans ses infos
+- Puis regarder dans les détails du paquets les termes **"BD_ADDR"** et **"Remote Name"**
+- **"BD_ADDR"** indique le _Bluetooth Address_ de l'ordinateur
+- **"Remote Name"** indique le nome du téléphone
+- **(screenshot)**
+- Une fois ces deux informations obtenus, mettre en majuscule le _Bluetooth Adresss_, les concatener et les chiffrer en SHA1 sur un site pour obtenir le mot de passe
+
