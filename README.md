@@ -10,9 +10,13 @@ Un échange authentifié de fichier réalisé grâce au protocole FTP. Retrouvez
 ![](/ss_00001.png)
 
 - rechercher **_ftp_** car il s'agit d'un **protocole FTP**
+
 ![](/ss_00002.png)
+
 - dans la colonne **"info"**, une ligne contient **"Request: PASS"** et le mot de passe s'y trouve
-- **(screenshot)**
+
+![](/ss_00003.png)
+
 - voilà pour ce challenge
 
 
@@ -21,23 +25,34 @@ Retrouvez le mot de passe de l’utilisateur dans cette capture réseau de sessi
 
 - "Démarrer le challenge": un fichier nommée **_ch2.pcap_** sera téléchargé automatiquement
 - ouvrir **_ch2.pcap_** aver Wireshark
-- **(screenshot)**
+
+![](/ss_00004.png)
+
 - faire un clic-droit sur un des paquets > follow > tcp stream
-- **(screenshot)**
+
+![](/ss_00005.png)
+
 - le mot de passe devrait s'afficher dans boîte de dialogue qui s'affiche
-- **(screenshot)**
+
+![](/ss_00006.png)
 
 ## Authentification twitter
 Une session d’authentification twitter a été capturée. Retrouvez le mot de passe de l’utilisateur dans cette capture réseau.
 
 - "Démarrer le challenge": un fichier nommée **_ch3.pcap_** sera téléchargé automatiquement
 - ouvrir **_ch3.pcap_** aver Wireshark
-- **(screenshot)**
+
+![](/ss_00007.png)
+
 - On peut voir qu'il s'agit d'un protocole HTTP
 - Faire un clic-droit sur le paquet > follow > HTTP stream
-- **(screenshot)**
+
+![](/ss_00008.png)
+
 - Puisqu'il s'agit d'une Authentification HTTP, _les identifiants_ devrait se trouver sur la ligne **"Authorization"**
-- **(screenshot)**
+
+![](/ss_00009.png)
+
 - On peut voir **"Basic"_* suivi d'une chaîne de caractère en **base64** qu'il faudra decoder pour avoir le mot de passe
 
 ## ETHERNET - trame
@@ -45,12 +60,18 @@ Retrouvez les données normalement confidentielles contenues dans cette trame.
 
 -"Démarrer le challenge": vous obtiendrez un fichier **_ch12.txt_**
 - Ce fichier contient une trame ethernet qu'il faudra décodé
-- **(screenshot)**
+
+![](/ss_000010.png)
+
 - Utiliser n'importe quel **"packet decoder"** que vous trouverez en ligne
 - Vous devrer avoir le resultat suivant
-- **(screenshot)**
+
+![](/ss_000011.png)
+
 - On pourra constater qu'il s'agit d'un protocole HTTP donc _les identifiants_ se trouvent dans **"Authorization"**
-- **(screenshot)**
+
+![](/ss_00012.png)
+
 - Pas la peine de decoder la chaîne de caracère en **base64**, le mot de passe est visible
 
 ## Bluetooth - Fichier inconnu
@@ -63,11 +84,17 @@ AB:CD:EF:12:34:56monTelephone -> 836eca0d42f34291c5fefe91010873008b53c129
 
 -"Démarrer le challenge": vous obtiendrez un fichier **_ch18.bin_**
 - Ouvrir le fichier .bin sur Wireshark, on y trouvera plusieurs paquets
-- **(screenshot)**
+
+![](/ss_000013.png)
+
 - Dans la liste des paquets, trouver celui contenant **"Remote name Request complete"** dans ses infos
-- **(screenshot)**
+
+![](/ss_000014.png)
+
 - Puis regarder dans la fenêtre des détails du paquet, dans **"Bluetooth HCI Event"** les termes **"BD_ADDR"** et **"Remote Name"**
-- **(screenshot)**
+
+![](/ss_000015.png)
+
 - **"BD_ADDR"** indique le _Bluetooth Address_ de l'ordinateur
 - **"Remote Name"** indique le nome du téléphone
 - Une fois ces deux informations obtenus, mettre en majuscule le _Bluetooth Adresss_, les concatener et les chiffrer en SHA1 sur un site pour obtenir le mot de passe
