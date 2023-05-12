@@ -61,12 +61,12 @@ Retrouvez les données normalement confidentielles contenues dans cette trame.
 -"Démarrer le challenge": vous obtiendrez un fichier **_ch12.txt_**
 - Ce fichier contient une trame ethernet qu'il faudra décodé
 
-![](/ss_000010.png)
+![](/ss_00010.png)
 
 - Utiliser n'importe quel **"packet decoder"** que vous trouverez en ligne
 - Vous devrer avoir le resultat suivant
 
-![](/ss_000011.png)
+![](/ss_00011.png)
 
 - On pourra constater qu'il s'agit d'un protocole HTTP donc _les identifiants_ se trouvent dans **"Authorization"**
 
@@ -85,15 +85,15 @@ AB:CD:EF:12:34:56monTelephone -> 836eca0d42f34291c5fefe91010873008b53c129
 -"Démarrer le challenge": vous obtiendrez un fichier **_ch18.bin_**
 - Ouvrir le fichier .bin sur Wireshark, on y trouvera plusieurs paquets
 
-![](/ss_000013.png)
+![](/ss_00013.png)
 
 - Dans la liste des paquets, trouver celui contenant **"Remote name Request complete"** dans ses infos
 
-![](/ss_000014.png)
+![](/ss_00014.png)
 
 - Puis regarder dans la fenêtre des détails du paquet, dans **"Bluetooth HCI Event"** les termes **"BD_ADDR"** et **"Remote Name"**
 
-![](/ss_000015.png)
+![](/ss_00015.png)
 
 - **"BD_ADDR"** indique le _Bluetooth Address_ de l'ordinateur
 - **"Remote Name"** indique le nome du téléphone
