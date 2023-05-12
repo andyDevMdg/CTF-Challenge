@@ -7,7 +7,7 @@ Un échange authentifié de fichier réalisé grâce au protocole FTP. Retrouvez
 - "Démarrer le challenge": un fichier nommée **_ch1.pcap_** sera téléchargé automatiquement
 - ouvrir **_ch1.pcap_** aver Wireshark
 
-![]/ss_00001.png
+![](/ss_00001.png)
 
 - rechercher **_ftp_** car il s'agit d'un **protocole FTP**
 - **(screenshot)**
