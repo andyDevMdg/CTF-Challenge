@@ -35,6 +35,7 @@ Une session d’authentification twitter a été capturée. Retrouvez le mot de 
 - Faire un clic-droit sur le paquet > follow > HTTP stream
 - **(screenshot)**
 - Puisqu'il s'agit d'une Authentification HTTP, _les identifiants_ devrait se trouver sur la ligne **"Authorization"**
+- **(screenshot)**
 - On peut voir **"Basic"_* suivi d'une chaîne de caractère en **base64** qu'il faudra decoder pour avoir le mot de passe
 
 ## ETHERNET - trame
