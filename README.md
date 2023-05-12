@@ -10,7 +10,7 @@ Un échange authentifié de fichier réalisé grâce au protocole FTP. Retrouvez
 ![](/ss_00001.png)
 
 - rechercher **_ftp_** car il s'agit d'un **protocole FTP**
-- **(screenshot)**
+![](/ss_00002.png)
 - dans la colonne **"info"**, une ligne contient **"Request: PASS"** et le mot de passe s'y trouve
 - **(screenshot)**
 - voilà pour ce challenge
