@@ -62,10 +62,11 @@ AB:CD:EF:12:34:56monTelephone -> 836eca0d42f34291c5fefe91010873008b53c129
 -"Démarrer le challenge": vous obtiendrez un fichier **_ch18.bin_**
 - Ouvrir le fichier .bin sur Wireshark, on y trouvera plusieurs paquets
 - **(screenshot)**
-- Dans la liste des paquets, trouver celui contenant **"Remote name"** dans ses infos
-- Puis regarder dans les détails du paquets les termes **"BD_ADDR"** et **"Remote Name"**
+- Dans la liste des paquets, trouver celui contenant **"Remote name Request complete"** dans ses infos
+- **(screenshot)**
+- Puis regarder dans la fenêtre des détails du paquet, dans **"Bluetooth HCI Event"** les termes **"BD_ADDR"** et **"Remote Name"**
+- **(screenshot)**
 - **"BD_ADDR"** indique le _Bluetooth Address_ de l'ordinateur
 - **"Remote Name"** indique le nome du téléphone
-- **(screenshot)**
 - Une fois ces deux informations obtenus, mettre en majuscule le _Bluetooth Adresss_, les concatener et les chiffrer en SHA1 sur un site pour obtenir le mot de passe
 
